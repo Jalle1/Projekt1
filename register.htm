@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)http://localhost/slutprojektjava/dreamteam/register.html -->
+<html ng-app="validation" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-animate){display:none !important;}ng\:form{display:block;}</style>
+	<link rel="stylesheet" href="./register_files/bootstrap.css">
+    <script src="./register_files/angular.js"></script>
+    <script src="./register_files/angular-messages.js"></script>
+    <link href="./register_files/style.css" type="text/css" rel="stylesheet"> 
+    <link href="./register_files/style.css" type="text/css" rel="stylesheet">
+    
+  </head>
+
+  <body class="container ng-scope" ng-controller="RegistrationController as registration">
+    <h1>Register!</h1>
+    <h3 class="ng-binding"></h3> 
+    <form name="registrationForm" novalidate="" ng-submit="registration.submit(registrationForm.$valid)" class="ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength ng-valid-compare-to ng-valid-parse ng-dirty">
+       <div class="form-group">
+            <label>User Name</label>
+            <input type="text" name="username" class="form-control ng-valid-pattern ng-valid-maxlength ng-dirty ng-valid-parse ng-invalid ng-invalid-required ng-touched" maxlength="15" ng-model="registration.user.username" ng-pattern="/^[a-zA-Z0-9]*$/" ng-trim="false" required="">
+            <div ng-messages="registrationForm.username.$error" ng-messages-include="messages.html" class="ng-active"><link href="./register_files/style.css" type="text/css" rel="stylesheet" class="ng-scope"><div class="messages ng-scope">
+    <!-- ngMessage: required --><div ng-message="required" class="ng-scope">Required</div>
+    <!-- ngMessage: minlength -->
+    <!-- ngMessage: maxlength -->
+    <!-- ngMessage: email -->
+    <!-- ngMessage: compareTo -->
+</div></div>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="registration.user.password" required="">
+            <div ng-messages="registrationForm.password.$error" ng-messages-include="messages.html" class="ng-active"><link href="./register_files/style.css" type="text/css" rel="stylesheet" class="ng-scope"><div class="messages ng-scope">
+    <!-- ngMessage: required --><div ng-message="required" class="ng-scope">Required</div>
+    <!-- ngMessage: minlength -->
+    <!-- ngMessage: maxlength -->
+    <!-- ngMessage: email -->
+    <!-- ngMessage: compareTo -->
+</div></div>
+        </div>
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" name="confirmPassword" class="form-control ng-isolate-scope ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-compare-to ng-valid-parse" ng-model="registration.user.confirmPassword" required="" compare-to="registration.user.password">
+            <div ng-messages="registrationForm.confirmPassword.$error" ng-messages-include="messages.html" class="ng-active"><link href="./register_files/style.css" type="text/css" rel="stylesheet" class="ng-scope"><div class="messages ng-scope">
+    <!-- ngMessage: required --><div ng-message="required" class="ng-scope">Required</div>
+    <!-- ngMessage: minlength -->
+    <!-- ngMessage: maxlength -->
+    <!-- ngMessage: email -->
+    <!-- ngMessage: compareTo -->
+</div></div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Register!</button>
+        </div>
+        <input type="text" name="username" class="form-control" ng-pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+    </form> 
+    <script src="./register_files/scripts.js"></script>
+  
+
+</body></html>
